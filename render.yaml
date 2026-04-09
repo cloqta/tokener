@@ -1,0 +1,16 @@
+services:
+  - type: worker
+    name: qwen-classy
+    runtime: python
+    buildCommand: |
+      pip install -r requirements.txt
+      python -m playwright install firefox
+      python -m playwright install-deps firefox
+    startCommand: python qwen_classy.py
+    envVars:
+      - key: SUPABASE_URL
+        sync: false        # fill in via Render dashboard
+      - key: SUPABASE_KEY
+        sync: false        # fill in via Render dashboard
+      - key: SUPABASE_TABLE
+        value: qwen_tokens

@@ -1,0 +1,5 @@
+oss2
+playwright
+Pillow
+supabase
+psutil
